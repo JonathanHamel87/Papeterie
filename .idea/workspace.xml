@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.">
-      <change afterPath="$PROJECT_DIR$/others resources/DiagClasse-PAPETERIE-BO.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/AppliTestBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Ligne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Panier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Ramette.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Stylo.java" afterDir="false" />
+    <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/AppliTestBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/AppliTestBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Panier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Panier.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +110,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571391881682</updated>
-      <workItem from="1571391884957" duration="3621000" />
+      <workItem from="1571391884957" duration="3881000" />
+      <workItem from="1571412168622" duration="2196000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet fil rouge &quot;Papeterie&quot;">
       <created>1571392231206</created>
@@ -124,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571392231206</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.&#10;&#10;- Bug au niveau du contenu du panier (A vérifier)">
+      <created>1571396180919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571396180919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +138,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -145,7 +150,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Création du projet fil rouge &quot;Papeterie&quot;" />
     <MESSAGE value="Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI" />
+    <MESSAGE value="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.&#10;&#10;- Bug au niveau du contenu du panier (A vérifier)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.&#10;&#10;- Bug au niveau du contenu du panier (A vérifier)" />
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>

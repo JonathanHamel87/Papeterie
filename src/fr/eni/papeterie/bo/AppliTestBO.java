@@ -44,7 +44,8 @@ public class AppliTestBO {
 			articles.add(new Stylo(3, "Stypen", "PlumeS", "Stylo Plume Stypen", 5.5f, 20, "jaune"));
 			articles.add(new Stylo(4, "Waterman", "WOBGreen", "Waterman Orion Bille vert",(float)5.5, 20, "vert"));
 			articles.add(new Stylo(5, "Parker", "PlumeP", "Stylo Plume Parker", 5.5f, 5, "noir"));
-			
+
+
 			System.out.println("\nREM : Affichage du catalogue");
 			//on affiche la liste des articles
 			afficherCatalogue(articles);

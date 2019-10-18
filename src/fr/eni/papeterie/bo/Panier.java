@@ -1,5 +1,6 @@
 package fr.eni.papeterie.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Panier {
@@ -9,6 +10,7 @@ public class Panier {
 
     /******************** CONSTRUCTORS ********************/
     public Panier() {
+        lignesPanier = new ArrayList<Ligne>();
     }
 
     /******************** GETTERS AND SETTERS ********************/
@@ -30,13 +32,22 @@ public class Panier {
     /******************** METHODS ********************/
     @Override
     public String toString() {
-        return "Panier{" +
-                "montant=" + montant +
-                ", lignesPanier=" + lignesPanier +
-                '}';
+        StringBuffer sb = new StringBuffer();
+        sb.append("Panier : \n\n");
+        for (Ligne ligne : lignesPanier) {
+            if (ligne !=null){
+                sb.append("ligne "+lignesPanier.indexOf(ligne)+ " :\t");
+                sb.append(ligne.toString());
+                sb.append("\n");
+            }
+        }
+        sb.append("\nValeur du panier : " + getMontant());
+        sb.append("\n\n");
+
+        return sb.toString();
     }
 
-    public Ligne getLigne(int index){
+    public final Ligne getLigne(int index){
         return lignesPanier.get(index);
     }
 
