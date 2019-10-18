@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ENI.iml" afterDir="false" />
+    <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.">
+      <change afterPath="$PROJECT_DIR$/others resources/DiagClasse-PAPETERIE-BO.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/AppliTestBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Ligne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Panier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Ramette.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bo/Stylo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,9 +24,17 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Jonathan Hamel &lt;jonathan.hamel87@gmail.com&gt;" />
         <option value="Jonathan Hamel" />
         <option value="jonathan.hamel87@gmail.com" />
       </list>
@@ -44,8 +52,11 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1SN6ocN7uz3MnCZ0gtIV9slEbKb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -53,6 +64,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.eni.papeterie.bo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\others resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,6 +85,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="AppliTestBO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.eni.papeterie.bo.AppliTestBO" />
+      <module name="ENI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.eni.papeterie.bo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppliTestBO" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -76,8 +115,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571391881682</updated>
-      <workItem from="1571391884957" duration="282000" />
+      <workItem from="1571391884957" duration="3621000" />
     </task>
+    <task id="LOCAL-00001" summary="Création du projet fil rouge &quot;Papeterie&quot;">
+      <created>1571392231206</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571392231206</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,8 +142,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Création du projet fil rouge &quot;Papeterie&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création du projet fil rouge &quot;Papeterie&quot;" />
+    <MESSAGE value="Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI" />
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
