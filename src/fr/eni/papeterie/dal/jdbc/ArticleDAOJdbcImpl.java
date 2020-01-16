@@ -3,13 +3,14 @@ package fr.eni.papeterie.dal.jdbc;
 import fr.eni.papeterie.bo.Article;
 import fr.eni.papeterie.bo.Ramette;
 import fr.eni.papeterie.bo.Stylo;
+import fr.eni.papeterie.dal.ArticleDAO;
 import fr.eni.papeterie.dal.DALException;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDAOJdbcImpl {
+public class ArticleDAOJdbcImpl implements ArticleDAO {
     /* Requête SQL */
     private static final String insert = "INSERT INTO articles(reference, marque, designation, prixUnitaire, qteStock, grammage, couleur, type) VALUES(?,?,?,?,?,?,?,?) ";
     private static final String update = "UPDATE articles SET idArticle=?, reference=?, marque=?, designation=?, prixUnitaire=?, qteStock=?, grammage=?, couleur=?, type=? WHERE idArticle=?";
@@ -21,32 +22,13 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
     private static final String TYPE_RAMETTE = "RAMETTE";
     private static final String TYPE_STYLO = "STYLO";
 
-    /* Connexion */
-    private Connection connexion;
-
-    /* CHARGEMENT DU DRIVER JDBC */
-    static{
-        // Chargement du driver
-        try{
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        } catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
-    }
-
     /****************************** CONSTRUCTEUR ******************************/
     public ArticleDAOJdbcImpl() {
     }
     /****************************** FONCTION DIVERSE ******************************/
-    public Connection getConnection() throws SQLException{
-        if (connexion == null){
-            String url = "jdbc:sqlserver://127.0.0.1;databasename=PAPETERIE_DB";
-            connexion = DriverManager.getConnection(url, "user", "Pa$$W0rd");
-        }
-        return connexion;
-    }
 
-    public void closeConnection(){
+
+    public void closeConnection(Connection connexion){
         if (connexion != null){
             try{
                 connexion.close();
@@ -57,6 +39,7 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
         }
     }
     /****************************** FONCTION SQL ******************************/
+    @Override
     public Article selectById(int id) throws DALException {
         Connection cnx = null;
         PreparedStatement req = null;
@@ -64,7 +47,7 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
         Article article = null;
 
         try{
-            cnx = getConnection();
+            cnx = JdbcTools.getConnection();
             req = cnx.prepareStatement(selectById);
             req.setInt(1, id);
 
@@ -103,11 +86,12 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            closeConnection(cnx);
         }
         return article;
     }
 
+    @Override
     public List<Article> selectAll() throws DALException {
         Connection cnx = null;
         Statement req = null;
@@ -115,7 +99,7 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
         List<Article> liste = new ArrayList<>();
 
         try{
-            cnx = getConnection();
+            cnx = JdbcTools.getConnection();
             req = cnx.createStatement();
             rs = req.executeQuery(selectAll);
 
@@ -157,17 +141,18 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            closeConnection(cnx);
         }
         return liste;
     }
 
+    @Override
     public void insert(Article article){
         Connection cnx = null;
         PreparedStatement req = null;
 
         try {
-            cnx = getConnection();
+            cnx = JdbcTools.getConnection();
             req = cnx.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
             req.setString(1, article.getReference());
@@ -207,16 +192,17 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
             }catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            closeConnection(cnx);
         }
     }
 
+    @Override
     public void update(Article article){
         Connection cnx = null;
         PreparedStatement req = null;
 
         try{
-            cnx = getConnection();
+            cnx = JdbcTools.getConnection();
             req = cnx.prepareStatement(update);
 
             req.setString(1, article.getReference());
@@ -249,16 +235,17 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            closeConnection(cnx);
         }
     }
 
+    @Override
     public void delete(int id){
         Connection cnx = null;
         PreparedStatement req = null;
 
         try {
-            cnx = getConnection();
+            cnx = JdbcTools.getConnection();
             req = cnx.prepareStatement(delete);
 
             req.setInt(1, id);
@@ -274,7 +261,7 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            closeConnection(cnx);
         }
     }
 
