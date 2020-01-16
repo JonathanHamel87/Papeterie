@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sqljdbc42">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Formation CDA/100 - Le développement en couches et la persistance des données avec Java SE/Module 04 - Le développement de la couche Data Access Layer (DAL)/Cours 100 - Module 04/Module 04 - Solution TP 01 - Papeterie - Partie 2/papeterie/lib/sqljdbc42.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

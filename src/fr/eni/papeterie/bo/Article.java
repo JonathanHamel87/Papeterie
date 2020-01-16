@@ -11,12 +11,8 @@ public abstract class Article {
 
     /******************** CONSTRUCTORS ********************/
     public Article(int idArticle, String marque, String ref, String designation, float pu, int qte) {
-        this.idArticle = idArticle;
-        this.reference = ref;
-        this.marque = marque;
-        this.designation = designation;
-        this.prixUnitaire = pu;
-        this.qteStock = qte;
+       this(marque, ref, designation, pu, qte);
+       setIdArticle(idArticle);
     }
 
     public Article(String marque, String ref, String designation, float pu, int qte) {
