@@ -86,7 +86,7 @@ public class ArticleController {
 
     public void supprimer(){
         try {
-            catalogueManager.removeArticle(indexCatalogue);
+            catalogueManager.removeArticle(catalogues.get(indexCatalogue).getIdArticle());
             catalogues.remove(indexCatalogue);
         } catch(BLLException e){
             ecranArticle.erreurAffichage("Supression impossible");
