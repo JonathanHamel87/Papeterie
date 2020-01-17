@@ -3,6 +3,7 @@ package fr.eni.papeterie.ihm;
 import fr.eni.papeterie.bll.BLLException;
 import fr.eni.papeterie.bll.CatalogueManager;
 import fr.eni.papeterie.bo.Article;
+import fr.eni.papeterie.ihm.ecrCatalogue.EcranCatalogue;
 
 import java.util.List;
 
@@ -10,14 +11,14 @@ public class ArticleController {
     private EcranArticle ecranArticle;
     private int indexCatalogue;
     private CatalogueManager catalogueManager;
-    private List<Article> catalogues;
+    private List<Article> catalogue;
     private static ArticleController articleController;
 
     private ArticleController() {
         try {
             catalogueManager = new CatalogueManager();
 
-            catalogues = catalogueManager.getCatalogue();
+            catalogue = catalogueManager.getCatalogue();
         } catch (BLLException e) {
             e.printStackTrace();
         }
@@ -35,12 +36,15 @@ public class ArticleController {
 
         afficherPremierArticle();
         ecranArticle.setVisible(true);
+
+        EcranCatalogue ecranCatalogue = new EcranCatalogue();
+        ecranCatalogue.setVisible(true);
     }
 
     public void afficherPremierArticle() {
-        if (catalogues.size()>0){
+        if (catalogue.size()>0){
             indexCatalogue = 0;
-            ecranArticle.afficherArticle(catalogues.get(indexCatalogue));
+            ecranArticle.afficherArticle(catalogue.get(indexCatalogue));
         }else {
             indexCatalogue = -1;
             ecranArticle.afficherNouveau();
@@ -50,19 +54,19 @@ public class ArticleController {
     public void precedent(){
         if (indexCatalogue > 0){
             indexCatalogue--;
-            ecranArticle.afficherArticle(catalogues.get(indexCatalogue));
+            ecranArticle.afficherArticle(catalogue.get(indexCatalogue));
         }
     }
 
     public void suivant(){
-        if (indexCatalogue < catalogues.size()-1){
+        if (indexCatalogue < catalogue.size()-1){
             indexCatalogue++;
-            ecranArticle.afficherArticle(catalogues.get(indexCatalogue));
+            ecranArticle.afficherArticle(catalogue.get(indexCatalogue));
         }
     }
 
     public void nouveau(){
-        indexCatalogue = catalogues.size();
+        indexCatalogue = catalogue.size();
         ecranArticle.afficherNouveau();
     }
 
@@ -72,11 +76,11 @@ public class ArticleController {
         try {
             if (article.getIdArticle() == null){
                 catalogueManager.addArticle(article);
-                catalogues.add(article);
+                catalogue.add(article);
                 ecranArticle.afficherArticle(article);
             }else{
                 catalogueManager.updateArticle(article);
-                catalogues.set(indexCatalogue, article);
+                catalogue.set(indexCatalogue, article);
             }
         } catch (BLLException e) {
             ecranArticle.erreurAffichage("Erreur d'enregistrement");
@@ -86,22 +90,25 @@ public class ArticleController {
 
     public void supprimer(){
         try {
-            catalogueManager.removeArticle(catalogues.get(indexCatalogue).getIdArticle());
-            catalogues.remove(indexCatalogue);
+            catalogueManager.removeArticle(catalogue.get(indexCatalogue).getIdArticle());
+            catalogue.remove(indexCatalogue);
         } catch(BLLException e){
             ecranArticle.erreurAffichage("Supression impossible");
             e.printStackTrace();
         }
 
-        if (indexCatalogue < catalogues.size()){
-            ecranArticle.afficherArticle(catalogues.get(indexCatalogue));
+        if (indexCatalogue < catalogue.size()){
+            ecranArticle.afficherArticle(catalogue.get(indexCatalogue));
         }else if (indexCatalogue > 0 ){
             indexCatalogue--;
-            ecranArticle.afficherArticle(catalogues.get(indexCatalogue));
+            ecranArticle.afficherArticle(catalogue.get(indexCatalogue));
         }else{
             ecranArticle.afficherNouveau();
         }
     }
 
 
+    public List<Article> getCatalogue() {
+        return catalogue;
+    }
 }
