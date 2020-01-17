@@ -1,7 +1,13 @@
 package fr.eni.papeterie.ihm;
 
+import fr.eni.papeterie.bo.Article;
+import fr.eni.papeterie.bo.Ramette;
+import fr.eni.papeterie.bo.Stylo;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EcranArticle extends JFrame {
     /* Formulaire de saisie */
@@ -44,7 +50,7 @@ public class EcranArticle extends JFrame {
         // Définition action croix fermeture
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         // Taille de la fenêtre
-        this.setSize(400,400);
+        this.setSize(400,320);
         // Positionnement de la fenêtre
         this.setLocationRelativeTo(null);
         // Fenêtre redimensionnable
@@ -130,7 +136,7 @@ public class EcranArticle extends JFrame {
         panelPrincipal.add(getPanelGrammage(), gbc);
 
         /////////////////////////// Ligne 8 /////////////////////////////
-        /*gbc.gridy = 7;
+        gbc.gridy = 7;
 
         gbc.gridx = 0;
         panelPrincipal.add(getLblCouleur(), gbc);
@@ -143,7 +149,7 @@ public class EcranArticle extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridwidth = 2;
-        panelPrincipal.add(getPanelBoutons(), gbc);*/
+        panelPrincipal.add(getPanelBoutons(), gbc);
 
         // Ajout de l'ensemble dans l'écran principal
         this.setContentPane(panelPrincipal);
@@ -260,6 +266,15 @@ public class EcranArticle extends JFrame {
     public JRadioButton getRadioRamette() {
         if (radioRamette == null){
             radioRamette = new JRadioButton("Ramette");
+
+            radioRamette.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    getChk80().setEnabled(true);
+                    getChk100().setEnabled(true);
+                    getCboCouleur().setEnabled(false);
+                }
+            });
         }
         return radioRamette;
     }
@@ -267,6 +282,15 @@ public class EcranArticle extends JFrame {
     public JRadioButton getRadioStylo() {
         if (radioStylo == null){
             radioStylo = new JRadioButton("Stylo");
+
+            radioStylo.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    getCboCouleur().setEnabled(true);
+                    getChk80().setEnabled(false);
+                    getChk100().setEnabled(false);
+                }
+            });
         }
         return radioStylo;
     }
@@ -300,34 +324,176 @@ public class EcranArticle extends JFrame {
     }
 
     public JComboBox<String> getCboCouleur() {
+        if (cboCouleur == null){
+            String[]couleurs = {"bleu","vert", "rouge", "noir"};
+            cboCouleur = new JComboBox<String>(couleurs);
+        }
         return cboCouleur;
     }
 
     public JPanel getPanelBoutons() {
+        if(panelBoutons == null){
+            panelBoutons = new JPanel();
+            panelBoutons.setLayout(new FlowLayout());
+            panelBoutons.add(getBtnPrecedent());
+            panelBoutons.add(getBtnNouveau());
+            panelBoutons.add(getBtnEnregistrer());
+            panelBoutons.add(getBtnSupprimer());
+            panelBoutons.add(getBtnSuivant());
+        }
         return panelBoutons;
     }
 
     public JButton getBtnPrecedent() {
+        if (btnPrecedent == null){
+            btnPrecedent = new JButton();
+            ImageIcon img = new ImageIcon(this.getClass().getResource("resources/Back24.gif"));
+            btnPrecedent.setIcon(img);
+            btnPrecedent.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ArticleController.action().precedent();
+                }
+            });
+        }
         return btnPrecedent;
     }
 
     public JButton getBtnNouveau() {
+        if (btnNouveau == null){
+            btnNouveau = new JButton();
+            ImageIcon img = new ImageIcon(this.getClass().getResource("resources/New24.gif"));
+            btnNouveau.setIcon(img);
+
+            btnNouveau.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ArticleController.action().nouveau();
+                }
+            });
+        }
         return btnNouveau;
     }
 
     public JButton getBtnEnregistrer() {
+        if (btnEnregistrer == null){
+            btnEnregistrer = new JButton();
+            ImageIcon img = new ImageIcon(this.getClass().getResource("resources/Save24.gif"));
+            btnEnregistrer.setIcon(img);
+
+            btnEnregistrer.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ArticleController.action().enregistrer();
+                }
+            });
+        }
         return btnEnregistrer;
     }
 
     public JButton getBtnSupprimer() {
+        if (btnSupprimer == null){
+            btnSupprimer = new JButton();
+            ImageIcon img = new ImageIcon(this.getClass().getResource("resources/Delete24.gif"));
+            btnSupprimer.setIcon(img);
+
+            btnSupprimer.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ArticleController.action().supprimer();
+                }
+            });
+        }
         return btnSupprimer;
     }
 
     public JButton getBtnSuivant() {
+        if (btnSuivant == null){
+            btnSuivant = new JButton();
+            ImageIcon img = new ImageIcon(this.getClass().getResource("resources/Forward24.gif"));
+            btnSuivant.setIcon(img);
+
+        btnSuivant.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArticleController.action().suivant();
+            }
+        });
+        }
         return btnSuivant;
     }
 
-    public Integer getIdArticleAfficher() {
-        return idArticleAfficher;
+
+    /************************************* METHODS *************************************/
+    public void afficherArticle(Article article) {
+        idArticleAfficher = article.getIdArticle();
+        getTxtReference().setText(article.getReference() + "");
+        getTxtDesignation().setText(article.getDesignation() + "");
+        getTxtMarque().setText(article.getMarque() + "");
+        getTxtStock().setText(new Integer(article.getQteStock()) + "");
+        getTxtPrix().setText(String.valueOf(article.getPrixUnitaire()) + "");
+
+        // Stylo
+        if (article.getClass().equals(Stylo.class)){
+            // Activation du bouton radio
+            getRadioStylo().setSelected(true);
+            // activation du choix de la couleur
+            getCboCouleur().setEnabled(true);
+            // Sélection de la couleur
+            getCboCouleur().setSelectedItem(((Stylo) article).getCouleur());
+            // Désactivation des cases à cocher des Ramettes
+            getChk80().setEnabled(false);
+            getChk100().setEnabled(false);
+        }
+        // Ramette
+        else{
+            getRadioRamette().setSelected(true);
+            getChk80().setEnabled(true);
+            getChk100().setEnabled(true);
+            // Sélection grammage
+            getChk80().setSelected(((Ramette)article).getGrammage() == 80);
+            getChk100().setSelected(((Ramette)article).getGrammage() == 100);
+            // Désactivation de la couleur
+            getCboCouleur().setSelectedItem(null);
+            getCboCouleur().setEnabled(false);
+        }
+        // Activation en cas de nouvel article
+        getRadioStylo().setEnabled(article.getIdArticle() == null);
+        getRadioRamette().setEnabled(article.getIdArticle() == null);
+    }
+
+    public void afficherNouveau() {
+        Stylo stylo = new Stylo(null, "", "", "", 0.0f, 0, "bleu");
+        afficherArticle(stylo);
+    }
+
+    public Article getArticle() {
+        Article article = null;
+        if (getRadioStylo().isSelected()){
+            article = new Stylo();
+        }else{
+            article = new Ramette();
+        }
+
+        try{
+            article.setIdArticle(idArticleAfficher);
+            article.setReference(getTxtReference().getText());
+            article.setDesignation(getTxtDesignation().getText());
+            article.setMarque(getTxtMarque().getText());
+            article.setQteStock(Integer.parseInt(getTxtStock().getText()));
+            article.setPrixUnitaire(Float.parseFloat(getTxtPrix().getText()));
+            if (getCboCouleur().isEnabled()){
+                ((Stylo) article).setCouleur((String) getCboCouleur().getSelectedItem());
+            }else{
+                ((Ramette)article).setGrammage(getChk80().isSelected()?80:100);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return article;
+    }
+
+    public void erreurAffichage(String s) {
+        JOptionPane.showMessageDialog(EcranArticle.this, s, "", JOptionPane.ERROR_MESSAGE);
     }
 }

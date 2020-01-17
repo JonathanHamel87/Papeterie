@@ -10,6 +10,9 @@ public abstract class Article {
     private int qteStock;
 
     /******************** CONSTRUCTORS ********************/
+    public Article() {
+    }
+
     public Article(Integer idArticle, String marque, String ref, String designation, float pu, int qte) {
        this(marque, ref, designation, pu, qte);
        setIdArticle(idArticle);

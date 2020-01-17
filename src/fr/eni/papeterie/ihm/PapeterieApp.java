@@ -7,8 +7,7 @@ public class PapeterieApp {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                EcranArticle ecranArticle = new EcranArticle();
-                ecranArticle.setVisible(true);
+                ArticleController.action().runApp();
             }
         });
     }

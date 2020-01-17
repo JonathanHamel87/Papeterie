@@ -5,7 +5,10 @@ public class Stylo extends Article {
     private String couleur;
 
     /******************** CONSTRUCTORS ********************/
-    public Stylo(int idArticle, String ref, String marque, String designation, float pu, int qte, String couleur) {
+    public Stylo() {
+    }
+
+    public Stylo(Integer idArticle, String ref, String marque, String designation, float pu, int qte, String couleur) {
         super(idArticle, ref, marque, designation, pu, qte);
         this.couleur = couleur;
     }
