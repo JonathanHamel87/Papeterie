@@ -2,7 +2,7 @@ package fr.eni.papeterie.bo;
 
 public abstract class Article {
     /******************** ATTRIBUTES ********************/
-    private int idArticle;
+    private Integer idArticle;
     private String reference;
     private String marque;
     private String designation;
@@ -10,7 +10,7 @@ public abstract class Article {
     private int qteStock;
 
     /******************** CONSTRUCTORS ********************/
-    public Article(int idArticle, String marque, String ref, String designation, float pu, int qte) {
+    public Article(Integer idArticle, String marque, String ref, String designation, float pu, int qte) {
        this(marque, ref, designation, pu, qte);
        setIdArticle(idArticle);
     }
@@ -24,11 +24,11 @@ public abstract class Article {
     }
 
     /******************** GETTERS AND SETTERS ********************/
-    public int getIdArticle() {
+    public Integer getIdArticle() {
         return idArticle;
     }
 
-    public void setIdArticle(int idArticle) {
+    public void setIdArticle(Integer idArticle) {
         this.idArticle = idArticle;
     }
 
