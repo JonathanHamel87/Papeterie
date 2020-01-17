@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/others resources/DiagClasse_Papeterie_BLL.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bll/AppliTestBLL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bll/BLLException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bll/CatalogueManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/EcranArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/PapeterieApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/Back24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/Delete24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/Forward24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/New24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/Save24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources/aim.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +121,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/fr/eni/papeterie/bll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -124,19 +130,23 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="fr.eni.papeterie.bo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\src\fr\eni\papeterie\bll" />
-      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\others resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\src\fr\eni\papeterie\dal" />
       <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\others resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="fr.eni.papeterie.ihm" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\src\fr\eni\papeterie\ihm\resources" />
+      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\src\fr\eni\papeterie\bll" />
+      <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\CDA\Papeterie\others resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.eni.papeterie.bo" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.AppliTestBLL">
+  <component name="RunManager" selected="Application.PapeterieApp">
     <configuration name="AppliTestBLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.eni.papeterie.bll.AppliTestBLL" />
       <module name="ENI" />
@@ -176,8 +186,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PapeterieApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.eni.papeterie.ihm.PapeterieApp" />
+      <module name="ENI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.eni.papeterie.ihm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PapeterieApp" />
         <item itemvalue="Application.AppliTestBLL" />
         <item itemvalue="Application.AppliTestDAL" />
         <item itemvalue="Application.AppliTestBO" />
@@ -189,12 +213,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:Microsoft SQL Server - @localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -214,7 +233,8 @@
       <workItem from="1571391884957" duration="3881000" />
       <workItem from="1571412168622" duration="2196000" />
       <workItem from="1579172529101" duration="14475000" />
-      <workItem from="1579244906708" duration="3085000" />
+      <workItem from="1579244906708" duration="3988000" />
+      <workItem from="1579260030950" duration="4125000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet fil rouge &quot;Papeterie&quot;">
       <created>1571392231206</created>
@@ -244,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579193150633</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- TP N°4&#10;- Modification de idArticle int=&gt;Integer pour pouvoir vérifier s'il est null dans la méthode addArticle&#10;- Modification AppliTestBLL pour le removeArticle(Article a) alors que le diagramme possède removeArticle(int index)&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°5">
+      <created>1579248460893</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579248460893</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +297,9 @@
     <MESSAGE value="- Création du package fr.eni.papeterie.bo et ajout du fichier AppliTestBO fournit dans le TP par l'ENI&#10;- Création des classes Article, Ramette, Stylo, Ligne et Panier d'après le Diagramme fournit.&#10;&#10;- Bug au niveau du contenu du panier (A vérifier)" />
     <MESSAGE value="- Création de l'implementation DAO d'article&#10;- Mise en place des différentes fonction du CRUD&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- TP N°3" />
     <MESSAGE value="- Ajout de l'interface ArticleDAO&#10;- Ajout du JdbcTools&#10;- Ajout du DAOFactory&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Ajout de l'interface ArticleDAO&#10;- Ajout du JdbcTools&#10;- Ajout du DAOFactory&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle" />
+    <MESSAGE value="- TP N°4&#10;- Modification de idArticle int=&gt;Integer pour pouvoir vérifier s'il est null dans la méthode addArticle&#10;- Modification AppliTestBLL pour le removeArticle(Article a) alors que le diagramme possède removeArticle(int index)&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°5" />
+    <MESSAGE value="- TP N°5 en cours&#10;- Création du controller (vide pour le moment)&#10;- Création de l'écran (affichage des éléments sauf boutons)&#10;- Création de PapeterieApp qui est le point d'entrée pour afficher la fenêtre&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter le bandeau bouton&#10;- Créer les évenements sur les boutons&#10;- Coder le contenu du contrôleur&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°6" />
+    <option name="LAST_COMMIT_MESSAGE" value="- TP N°5 en cours&#10;- Création du controller (vide pour le moment)&#10;- Création de l'écran (affichage des éléments sauf boutons)&#10;- Création de PapeterieApp qui est le point d'entrée pour afficher la fenêtre&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter le bandeau bouton&#10;- Créer les évenements sur les boutons&#10;- Coder le contenu du contrôleur&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="177" key="#SQL_Dialects" timestamp="1579172694699">
@@ -281,14 +310,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579186797491" />
-    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1579245926788">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1579264037788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579245926788" />
-    <state x="1010" y="65" key="CommitChangelistDialog2" timestamp="1579248366459">
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579264037788" />
+    <state x="757" y="403" width="406" height="242" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579261453973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1010" y="65" key="CommitChangelistDialog2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248366459" />
+    <state x="757" y="403" width="406" height="242" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1579261453973" />
+    <state x="734" y="65" key="CommitChangelistDialog2" timestamp="1579264859449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="825" y="65" key="CommitChangelistDialog2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248453444" />
+    <state x="734" y="65" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579264859449" />
     <state x="759" y="221" key="ExecutionTargetDialog" timestamp="1579172931545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,22 +332,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="260" key="FileChooserDialogImpl/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579187352180" />
-    <state width="1876" height="276" key="GridCell.Tab.0.bottom" timestamp="1579248300842">
+    <state width="914" height="276" key="GridCell.Tab.0.bottom" timestamp="1579264697538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="276" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248300842" />
-    <state width="1876" height="276" key="GridCell.Tab.0.center" timestamp="1579248300842">
+    <state width="1876" height="276" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
+    <state width="914" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579264697538" />
+    <state width="914" height="276" key="GridCell.Tab.0.center" timestamp="1579264697538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="276" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248300842" />
-    <state width="1876" height="276" key="GridCell.Tab.0.left" timestamp="1579248300842">
+    <state width="1876" height="276" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
+    <state width="914" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579264697538" />
+    <state width="914" height="276" key="GridCell.Tab.0.left" timestamp="1579264697538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="276" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248300842" />
-    <state width="1876" height="276" key="GridCell.Tab.0.right" timestamp="1579248300842">
+    <state width="1876" height="276" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
+    <state width="914" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579264697538" />
+    <state width="914" height="276" key="GridCell.Tab.0.right" timestamp="1579264697538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="276" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248300842" />
+    <state width="1876" height="276" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
+    <state width="914" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579264697538" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1579172862902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -337,10 +376,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="822" y="265" key="com.intellij.database.view.ui.DbObjectDialog/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579173062097" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579245662706">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579260057349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579245662706" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579260057349" />
     <state x="681" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579187043980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
