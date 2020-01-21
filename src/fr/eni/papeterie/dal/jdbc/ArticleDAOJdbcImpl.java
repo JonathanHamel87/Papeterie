@@ -3,20 +3,24 @@ package fr.eni.papeterie.dal.jdbc;
 import fr.eni.papeterie.bo.Article;
 import fr.eni.papeterie.bo.Ramette;
 import fr.eni.papeterie.bo.Stylo;
-import fr.eni.papeterie.dal.ArticleDAO;
 import fr.eni.papeterie.dal.DALException;
+import fr.eni.papeterie.dal.DAO;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDAOJdbcImpl implements ArticleDAO {
+public class ArticleDAOJdbcImpl implements DAO<Article> {
     /* Requête SQL */
     private static final String insert = "INSERT INTO articles(reference, marque, designation, prixUnitaire, qteStock, grammage, couleur, type) VALUES(?,?,?,?,?,?,?,?) ";
     private static final String update = "UPDATE articles SET idArticle=?, reference=?, marque=?, designation=?, prixUnitaire=?, qteStock=?, grammage=?, couleur=?, type=? WHERE idArticle=?";
-private static final String selectAll = "SELECT idArticle, reference, marque, designation, prixUnitaire, qteStock, grammage, couleur, type FROM articles";
+    private static final String selectAll = "SELECT idArticle, reference, marque, designation, prixUnitaire, qteStock, grammage, couleur, type FROM articles";
     private static final String selectById = "SELECT idArticle, reference, marque, designation, prixUnitaire, qteStock, grammage, couleur, type FROM articles WHERE idArticle=?";
     private static final String delete = "DELETE FROM articles WHERE idArticle=?";
+
+    private static final String selectByMarque = "SELECT reference, designation, marque, prixUnitaire, qteStock, grammage, couleur, type FROM articles WHERE marque=?";
+    private static final String selectByMotCle = "SELECT reference, designation, marque, prixUnitaire, qteStock, grammage, couleur, type FROM articles WHERE marque LIKE ? OR designation LIKE ?";
+
 
     /* CONSTANTE Ramette et stylo */
     private static final String TYPE_RAMETTE = "RAMETTE";
@@ -265,5 +269,110 @@ private static final String selectAll = "SELECT idArticle, reference, marque, de
         }
     }
 
+    public List<Article> selectByMarque(String search) throws DALException{
+        Connection cnx = null;
+        PreparedStatement req = null;
+        ResultSet rs = null;
+
+        List<Article> liste = new ArrayList();
+
+        try{
+            cnx = JdbcTools.getConnection();
+            req = cnx.prepareStatement(selectByMarque);
+            req.setString(1, search);
+            rs = req.executeQuery();
+
+            Article article = null;
+
+            while (rs.next()){
+                if (TYPE_STYLO.equalsIgnoreCase(rs.getString("type").trim())){
+                    article = new Stylo(
+                            rs.getInt("idArticle"),
+                            rs.getString("reference"),
+                            rs.getString("designation"),
+                            rs.getString("marque"),
+                            rs.getFloat("prixUnitaire"),
+                            rs.getInt("qteStock"),
+                            rs.getString("couleur")
+                    );
+                }
+                if (TYPE_RAMETTE.equalsIgnoreCase(rs.getString("type").trim())){
+                    article = new Ramette(
+                            rs.getInt("idArticle"),
+                            rs.getString("reference"),
+                            rs.getString("designation"),
+                            rs.getString("marque"),
+                            rs.getFloat("prixUnitaire"),
+                            rs.getInt("qteStock"),
+                            rs.getInt("grammage")
+                    );
+                }
+
+            }
+            liste.add(article);
+
+        } catch (SQLException e) {
+            throw new DALException("Impossible de sélectionner par les marques",e);
+        }finally {
+            if (req != null){
+                try {
+                    req.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            closeConnection(cnx);
+        }
+        return liste;
+    }
+
+    public List<Article> selectByMotCle(String search) throws DALException, SQLException {
+        Connection cnx = null;
+        PreparedStatement req = null;
+        ResultSet rs = null;
+
+        List<Article> liste = new ArrayList();
+
+        try {
+            cnx = JdbcTools.getConnection();
+            req = cnx.prepareStatement(selectByMotCle);
+            rs = req.executeQuery();
+
+            Article article = null;
+
+            while (rs.next()){
+                if (TYPE_STYLO.equalsIgnoreCase(rs.getString("type").trim())){
+                    article = new Stylo(
+                            rs.getString("reference"),
+                            rs.getString("designation"),
+                            rs.getString("marque"),
+                            rs.getFloat("prixUnitaire"),
+                            rs.getInt("qteStock"),
+                            rs.getString("couleur")
+                    );
+                }
+                if (TYPE_RAMETTE.equalsIgnoreCase(rs.getString("type").trim())){
+                    article = new Ramette(
+                            rs.getString("reference"),
+                            rs.getString("designation"),
+                            rs.getString("marque"),
+                            rs.getFloat("prixUnitaire"),
+                            rs.getInt("qteStock"),
+                            rs.getInt("grammage")
+                    );
+                }
+            }
+            liste.add(article);
+
+        } catch (SQLException e) {
+            throw new DALException("Selection par mot clé impossible",e);
+        }finally {
+            if (req != null){
+                req.close();
+            }
+            closeConnection(cnx);
+        }
+        return liste;
+    }
 
 }

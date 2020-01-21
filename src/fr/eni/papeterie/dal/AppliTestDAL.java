@@ -15,7 +15,7 @@ public class AppliTestDAL {
 		//ArticleDAOJdbcImpl articleDAO = new ArticleDAOJdbcImpl();
 		//ArticleDAO articleDAO = new ArticleDAOJdbcImpl();
 		//A décommenter pour tester la classe DAOFactory
-		ArticleDAO articleDAO = DAOFactory.getArticleDAO();
+		DAO<Article> articleDAO = DAOFactory.getArticleDAO();
 
 		//Instanciation du jeu d'essai
 		Article a1 = new Stylo( "Bic", "BBOrange","Bic bille Orange", 1.2f, 20, "bleu");

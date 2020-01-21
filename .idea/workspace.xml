@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21cdad60-5494-4a33-9c70-05e85e1737c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/others resources/DiagClassePanelBoutons.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/IPanelBoutonObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/PanelBoutons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/EcranArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/ihm/EcranArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/bll/CatalogueManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/bll/CatalogueManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/ArticleDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/jdbc/ArticleDAOJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/eni/papeterie/dal/jdbc/ArticleDAOJdbcImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,7 @@
       <recent name="C:\Users\Jonathan\Documents\Workplace\ENI\others resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PapeterieApp">
+  <component name="RunManager" selected="Application.AppliTestDAL">
     <configuration name="AppliTestBLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.eni.papeterie.bll.AppliTestBLL" />
       <module name="ENI" />
@@ -197,8 +198,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PapeterieApp" />
         <item itemvalue="Application.AppliTestDAL" />
+        <item itemvalue="Application.PapeterieApp" />
         <item itemvalue="Application.AppliTestBLL" />
         <item itemvalue="Application.AppliTestBO" />
       </list>
@@ -209,12 +210,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:Microsoft SQL Server - @localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -236,7 +232,8 @@
       <workItem from="1579172529101" duration="14475000" />
       <workItem from="1579244906708" duration="3988000" />
       <workItem from="1579260030950" duration="4718000" />
-      <workItem from="1579269469666" duration="9741000" />
+      <workItem from="1579269469666" duration="9885000" />
+      <workItem from="1579597146304" duration="1644000" />
     </task>
     <task id="LOCAL-00001" summary="Création du projet fil rouge &quot;Papeterie&quot;">
       <created>1571392231206</created>
@@ -301,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579278363965</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- TP N°7 fini&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle (voir l'utilité)&#10;- TP N°8">
+      <created>1579279427761</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579279427761</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +336,8 @@
     <MESSAGE value="- TP N°5 en cours&#10;- Ajout du bandeau bouton&#10;- Ajout des événements&#10;- Création du contenu du contrôleur&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Corriger le décalage lors de la suppression&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°6" />
     <MESSAGE value="- TP N°5 fini&#10;- correction d'une erreur lors de la suppression d'un élément dans la table&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle&#10;- TP N°6" />
     <MESSAGE value="- TP N°6 fini&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle (voir l'utilité)&#10;- TP N°7" />
-    <option name="LAST_COMMIT_MESSAGE" value="- TP N°6 fini&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle (voir l'utilité)&#10;- TP N°7" />
+    <MESSAGE value="- TP N°7 fini&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle (voir l'utilité)&#10;- TP N°8" />
+    <option name="LAST_COMMIT_MESSAGE" value="- TP N°7 fini&#10;&#10;&#10;&#10;/* Prochaines Tâches*/&#10;- Ajouter selectByMarque et selectByMotCle (voir l'utilité)&#10;- TP N°8" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="177" key="#SQL_Dialects" timestamp="1579172694699">
@@ -352,11 +357,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="757" y="403" width="406" height="242" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1579261453973" />
-    <state x="734" y="6" key="CommitChangelistDialog2" timestamp="1579278356982">
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579597415599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579597415599" />
+    <state x="734" y="6" key="CommitChangelistDialog2" timestamp="1579279421231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="825" y="65" key="CommitChangelistDialog2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579248453444" />
-    <state x="734" y="6" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579278356982" />
+    <state x="734" y="6" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579279421231" />
     <state x="759" y="221" key="ExecutionTargetDialog" timestamp="1579172931545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -366,26 +375,26 @@
     </state>
     <state x="666" y="260" key="FileChooserDialogImpl/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579187352180" />
     <state x="666" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579273529169" />
-    <state width="916" height="273" key="GridCell.Tab.0.bottom" timestamp="1579279383092">
+    <state width="1876" height="273" key="GridCell.Tab.0.bottom" timestamp="1579279457338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="276" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
-    <state width="916" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579279383092" />
-    <state width="916" height="273" key="GridCell.Tab.0.center" timestamp="1579279383092">
+    <state width="1876" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579279457338" />
+    <state width="1876" height="273" key="GridCell.Tab.0.center" timestamp="1579279457338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="276" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
-    <state width="916" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579279383092" />
-    <state width="916" height="273" key="GridCell.Tab.0.left" timestamp="1579279383092">
+    <state width="1876" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579279457338" />
+    <state width="1876" height="273" key="GridCell.Tab.0.left" timestamp="1579279457338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="276" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
-    <state width="916" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579279383092" />
-    <state width="916" height="273" key="GridCell.Tab.0.right" timestamp="1579279383092">
+    <state width="1876" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579279457338" />
+    <state width="1876" height="273" key="GridCell.Tab.0.right" timestamp="1579279457338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="276" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579250297477" />
-    <state width="916" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579279383092" />
+    <state width="1876" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579279457338" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1579172862902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -395,11 +404,11 @@
     </state>
     <state x="81" y="92" width="1485" height="854" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579188334733" />
     <state x="81" y="92" width="1596" height="854" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579273533059" />
-    <state x="552" y="251" key="Vcs.Push.Dialog.v2" timestamp="1579278379081">
+    <state x="552" y="251" key="Vcs.Push.Dialog.v2" timestamp="1579279435725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="251" key="Vcs.Push.Dialog.v2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579193156942" />
-    <state x="552" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579278379081" />
+    <state x="552" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579279435725" />
     <state x="859" y="398" width="324" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1579186365386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -413,11 +422,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="822" y="265" key="com.intellij.database.view.ui.DbObjectDialog/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579173062097" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579269472653">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579597147507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1579245662706" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579269472653" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579597147507" />
     <state x="681" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579187043980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,19 +1,17 @@
 package fr.eni.papeterie.dal;
 
-import fr.eni.papeterie.bo.Article;
-
 import java.util.List;
 
-public interface ArticleDAO {
+public interface DAO<T> {
     // Selectionner un article par son id
-    Article selectById(int id) throws DALException;
+    T selectById(int id) throws DALException;
 
     // Selectionner tous les articles
-    List<Article> selectAll() throws DALException;
+    List<T> selectAll() throws DALException;
     // Insertion d'un nouvel article
-    void insert(Article article) throws DALException;
+    void insert(T data) throws DALException;
     // Mise à jour d'un article
-    void update(Article article) throws DALException;
+    void update(T data) throws DALException;
     // Suppression d'un article
     void delete(int id) throws DALException;
 }

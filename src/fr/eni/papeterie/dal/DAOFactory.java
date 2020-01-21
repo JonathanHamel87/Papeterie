@@ -1,10 +1,12 @@
 package fr.eni.papeterie.dal;
 
+import fr.eni.papeterie.bo.Article;
+
 public class DAOFactory {
-    public static ArticleDAO getArticleDAO(){
-        ArticleDAO articleDAO = null;
+    public static DAO<Article> getArticleDAO(){
+        DAO<Article> articleDAO = null;
         try {
-            articleDAO = (ArticleDAO) Class.forName("fr.eni.papeterie.dal.jdbc.ArticleDAOJdbcImpl").newInstance();
+            articleDAO = (DAO<Article>) Class.forName("fr.eni.papeterie.dal.jdbc.ArticleDAOJdbcImpl").newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e){
             e.printStackTrace();
         }
